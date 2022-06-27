@@ -40,25 +40,30 @@ init()
 
 
 document.getElementById("start").addEventListener("click", function () {
-    pressStart = true
+  clear()  
+  pressStart = true
+    timeLeft = 6
     var timeInterval = setInterval(function () {
         timeLeft--;
         seconds.textContent = timeLeft;
     
-      if (timeLeft === 0 && count < 5) {
+      if (timeLeft === 0) {
         clearInterval (timeInterval)
-        document.getElementById("letters").textContent = "You lose! Refresh to try again"
+        pressStart = false;       
+        document.getElementById("winlosemsessage").textContent = "You lose! Refresh to try again"
         loss+=1
         localStorage.setItem("loss", loss)
         document.getElementById ("losses").textContent = JSON.parse(localStorage.getItem ("loss"))
-      pressStart = false;
+        count = 0; 
       } else if (count >= 5) {
         clearInterval (timeInterval)
-        document.getElementById("letters").textContent = "You Win! Refresh to try again"
+        document.getElementById("winlosemessage").textContent = "You Win! Refresh to try again"
         win+=1
         localStorage.setItem("win", win)
         document.getElementById ("wins").textContent = JSON.parse(localStorage.getItem ("win"))
-      pressStart = false;
+        pressStart = false;
+        count = 0;
+        clearInterval (timeInterval)
       }
     
       }, 1000);
@@ -88,7 +93,7 @@ document.getElementById("start").addEventListener("click", function () {
             break;
             case"n":
             var nArray = document.getElementsByClassName("n")
-            for (var i =0; i<nArray.length; i++)
+            for (var i =0; i<nArray.length; i++) 
             nArray[i].textContent = "n"
             count+=1;
             console.log (count)
@@ -101,3 +106,16 @@ document.getElementById("start").addEventListener("click", function () {
     }
     }
 })
+
+function clear () {
+  document.getElementById("s").textContent = "_"
+  var eArray = document.getElementsByClassName("e")
+  for (var i =0; i<eArray.length; i++) 
+      eArray[i].textContent = "_"
+  document.getElementById("v").textContent = "_"
+  var nArray = document.getElementsByClassName("n")
+  for (var i =0; i<nArray.length; i++)
+  nArray[i].textContent = "_"
+  document.getElementById("t").textContent = "_"
+}
+
