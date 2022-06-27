@@ -24,12 +24,24 @@ getElementById("start").addEventListener("click")
     document.body.addEventListener("keypress", function (event){
     userKey = event.key;
     if (allChar.includes(event.key) === true) {
+        switch(userKey){
+            case"s":
+            getElementById("letters").textcontent = " s "
+            break;
+            case"e":
+            getElementById("letters").textcontent = " e "
+            break;
+            case"v":
+            getElementById("letters").textcontent = " v "
+            break;
+            case"n":
+            getElementById("letters").textcontent = " n "
+            break;
+            case"t":
+            getElementById("letters").textcontent = " t "
+            break;
+        }
         
-        getElementById("letters").textcontent = " s "
-        getElementById("letters").textcontent = " e "
-        getElementById("letters").textcontent = " v "
-        getElementById("letters").textcontent = " n "
-        getElementById("letters").textcontent = " t "
 
 
     }
