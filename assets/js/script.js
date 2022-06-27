@@ -47,17 +47,20 @@ document.getElementById("start").addEventListener("click", function () {
     
       if (timeLeft === 0 && count < 5) {
         clearInterval (timeInterval)
-        document.getElementById("letters").textContent = "You lose"
+        document.getElementById("letters").textContent = "You lose! Refresh to try again"
         loss+=1
         localStorage.setItem("loss", loss)
         document.getElementById ("losses").textContent = JSON.parse(localStorage.getItem ("loss"))
-      } else if (count > 5) {
+      pressStart = false;
+      } else if (count >= 5) {
         clearInterval (timeInterval)
-        document.getElementById("letters").textContent = "You Win"
+        document.getElementById("letters").textContent = "You Win! Refresh to try again"
         win+=1
         localStorage.setItem("win", win+=1)
         document.getElementById ("wins").textContent = JSON.parse(localStorage.getItem ("win"))
+      pressStart = false;
       }
+    
       }, 1000);
     })
 
