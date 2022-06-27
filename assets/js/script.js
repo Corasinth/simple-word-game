@@ -20,29 +20,28 @@
 var allChar = ["s", "e", "v", "e", "n", "t", "e", "e", "n"]
 var userKey
 
-getElementById("start").addEventListener("click")
+
+//getElementById("start").addEventListener("click")
     document.body.addEventListener("keypress", function (event){
     userKey = event.key;
-    if (allChar.includes(event.key) === true) {
+    console.log (userKey)
         switch(userKey){
             case"s":
-            getElementById("letters").textcontent = " s "
+            document.getElementById("s").textcontent = "s"
             break;
             case"e":
-            getElementById("letters").textcontent = " e "
+            document.getElementsByClassName("e").textcontent = "e"
             break;
             case"v":
-            getElementById("letters").textcontent = " v "
+            document.getElementById("v").textcontent = "v"
             break;
             case"n":
-            getElementById("letters").textcontent = " n "
+            document.getElementsByClassName("n").textcontent = "n"
             break;
             case"t":
-            getElementById("letters").textcontent = " t "
+            document.getElementById("t").textcontent = "t"
             break;
-        }
         
-
-
+        
     }
 })
