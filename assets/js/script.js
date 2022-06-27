@@ -25,11 +25,11 @@ getElementById("start").addEventListener("click")
     userKey = event.key;
     if (allChar.includes(event.key) === true) {
         
-        getElementById("letters").textcontent = "s _ _ _ _ _ _ _ _"
-        getElementById("letters").textcontent = "_ e _ e _ _ e e _"
-        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
-        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
-        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
+        getElementById("letters").textcontent = " s "
+        getElementById("letters").textcontent = " e "
+        getElementById("letters").textcontent = " v "
+        getElementById("letters").textcontent = " n "
+        getElementById("letters").textcontent = " t "
 
 
     }
