@@ -56,7 +56,7 @@ document.getElementById("start").addEventListener("click", function () {
         clearInterval (timeInterval)
         document.getElementById("letters").textContent = "You Win! Refresh to try again"
         win+=1
-        localStorage.setItem("win", win+=1)
+        localStorage.setItem("win", win)
         document.getElementById ("wins").textContent = JSON.parse(localStorage.getItem ("win"))
       pressStart = false;
       }
