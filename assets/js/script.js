@@ -20,7 +20,22 @@
 var allChar = ["s", "e", "v", "e", "n", "t", "e", "e", "n"]
 var userKey
 
-getElementById("start").addEventListener("click")
+var timeLeft = 3
+
+var seconds = document.getElementById("seconds")
+
+
+document.getElementById("start").addEventListener("click", function () {
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        seconds.textContent = timeLeft;
+    
+      if (timeLeft === 0) {
+        clearInterval (timeInterval)
+        document.write ("you lose")
+      }
+      }, 1000);
+    })
 
     document.body.addEventListener("keypress", function (event){
     userKey = event.key;
