@@ -17,8 +17,20 @@
 //Game loss condition when timer runs out and word is not guessed, and message of losing is displayed 
 
 
-var allChar = []
+var allChar = ["s", "e", "v", "e", "n", "t", "e", "e", "n"]
+var userKey
+
 getElementById("start").addEventListener("click")
-document.body.addEventListener("keypress", function (event){
-var userKey = event.key;
+    document.body.addEventListener("keypress", function (event){
+    userKey = event.key;
+    if (allChar.includes(event.key) === true) {
+        
+        getElementById("letters").textcontent = "s _ _ _ _ _ _ _ _"
+        getElementById("letters").textcontent = "_ e _ e _ _ e e _"
+        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
+        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
+        getElementById("letters").textcontent = "_ _ _ _ _ _ _ _ _"
+
+
+    }
 })
