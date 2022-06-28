@@ -40,9 +40,11 @@ init()
 
 
 document.getElementById("start").addEventListener("click", function () {
-  clear()  
+  clear()
+  count = 0;
   pressStart = true
-    timeLeft = 6
+  timeLeft = 6
+
     var timeInterval = setInterval(function () {
         timeLeft--;
         seconds.textContent = timeLeft;
@@ -50,20 +52,17 @@ document.getElementById("start").addEventListener("click", function () {
       if (timeLeft === 0) {
         clearInterval (timeInterval)
         pressStart = false;       
-        document.getElementById("winlosemsessage").textContent = "You lose! Refresh to try again"
         loss+=1
         localStorage.setItem("loss", loss)
         document.getElementById ("losses").textContent = JSON.parse(localStorage.getItem ("loss"))
-        count = 0; 
+        document.getElementById ("winlosemessage").textContent = "You lose! Refresh to try again"
       } else if (count >= 5) {
         clearInterval (timeInterval)
+        pressStart = false;
         document.getElementById("winlosemessage").textContent = "You Win! Refresh to try again"
         win+=1
         localStorage.setItem("win", win)
         document.getElementById ("wins").textContent = JSON.parse(localStorage.getItem ("win"))
-        pressStart = false;
-        count = 0;
-        clearInterval (timeInterval)
       }
     
       }, 1000);
